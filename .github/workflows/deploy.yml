@@ -12,7 +12,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install --legacy-peer-deps
       - run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
         with:
